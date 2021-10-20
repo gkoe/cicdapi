@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cicdapi:
+    image: cicdapi:latest
+    container_name: cicdapi
+    environment:
+      ASPNETCORE_URLS: http://0.0.0.0:5000
+      ASPNETCORE_ENVIRONMENT: Development
+    restart: on-failure
+    # network_mode: host
+    ports:
+      # - 0.0.0.0:41234:41234
+      # - 0.0.0.0:41234:41234/udp
+      - 8084:5000
+  
